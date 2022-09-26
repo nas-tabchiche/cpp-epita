@@ -31,6 +31,6 @@ int main(int argc , char** argv){
         std::cout << "The file "<<argv[1]<<" contains "<<cpt <<" words containing the motive "<< argv[2]<<"\n";
         return 0;
     }
-std::cout<<"The file "<<argv[1]<<"could not be opened.\n";
+std::cout<<"The file "<<argv[1]<<" could not be opened.\n";
 return 1;
 }
