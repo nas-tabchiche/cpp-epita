@@ -1,0 +1,3 @@
+/home/kiddes/Documents/cpp_epita/is_prime_prog/CMakeFiles/rebuild_cache.dir
+/home/kiddes/Documents/cpp_epita/is_prime_prog/CMakeFiles/edit_cache.dir
+/home/kiddes/Documents/cpp_epita/is_prime_prog/CMakeFiles/main.dir
