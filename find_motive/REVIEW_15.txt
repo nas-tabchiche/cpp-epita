@@ -1,14 +1,6 @@
 Correction du groupe 15: 
-Is prime prog : 
 
-- Le code compile
-- C'est bien clang-formatté
-- Tests :
-	->Test avec un nombre : OK
-	->Test avec plusieurs nombres : OK
-	->Test vide : OK 
-
-Find _motiv :
+find_motiv :
 
 - le code compile
 - Bon clang format
