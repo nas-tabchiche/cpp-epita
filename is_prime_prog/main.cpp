@@ -3,13 +3,13 @@
 
 int main()
 {
-    int nb;
+    long long  nb;
     while (std::cin>>nb){
         bool premier = true;
         if (nb<=1){
             premier = false;
         }
-        int i;
+        long long i;
         for (i=2;i<=std::sqrt(nb);i++){
             if (nb%i==0){
                 premier = false;
