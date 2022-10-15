@@ -1,0 +1,8 @@
+Correction du groupe 16: 
+
+Cartesian Vector
+
+- le code compile
+- Bon clang format
+- Tests: 
+    - Tous les opérateurs fonctionnent
