@@ -1,25 +1,30 @@
 #include <iostream>
-#include <cmath>
-
-int main()
+#include <string>
+using namespace std;
+long long int is_prime(long long int n) 
 {
-    long long  nb;
-    while (std::cin>>nb){
-        bool premier = true;
-        if (nb<=1){
-            premier = false;
-        }
-        long long i;
-        for (i=2;i<=std::sqrt(nb);i++){
-            if (nb%i==0){
-                premier = false;
-                break;
-            }
-        }
-    
-            std::cout<<nb<< " is a prime:"; 
-            (premier)? std::cout<<" True\n" : std::cout<<" False\n";
-        
+  bool is_prime = true;
+  if (n <= 1) {
+    cout << n << " is a prime: False\n";
+    return 0;
+  }
+
+  for (long long int i = 2; i <= n/2; ++i) {
+    if (n % i == 0) {
+        cout << n << " is a prime: False\n";
+        return 0;
+    }
+  }
+
+  cout << n << " is a prime: True\n";
+  return 0;
+}
+int main(int argc, char *argv[])
+{
+    long long int i;
+    while (cin >> i) {
+        is_prime(i);
     }
     return 0;
 }
+
