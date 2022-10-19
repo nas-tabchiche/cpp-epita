@@ -1,7 +1,7 @@
 // vector-test.cc
 #include <iostream>
 
-#include "vector.hh"
+#include "vector.h"
 
 #include <vector>
 #include <cstring> //strcmp
@@ -57,13 +57,13 @@ generate(size_t n)
     auto v = std::vector<Vector>(n);
     // Set some values
     for (size_t i = 0; i < NDIM; ++i)
-    {
-        for (size_t j = 0; j < n; ++j)
         {
-            auto& vv = v[j]; // Reference to one of your Vectors
-            vv[i] = (value) i+j;
+            for (size_t j = 0; j < n; ++j)
+                {
+                    auto& vv = v[j]; // Reference to one of your Vectors
+                    vv[i] = (value) i+j;
+                }
         }
-    }
     return v;
 }
 
@@ -71,6 +71,7 @@ generate(size_t n)
 void testAdd(size_t n)
 {
     auto vv = generate(n);
+
     // Add to each Vector his right neighbour
     for (size_t i = 1; i < n; ++i)
         vv[i-1] += vv[i];
@@ -94,28 +95,28 @@ void testVar(size_t n, int argc, char* argv[])
 
     auto v = generate(n);
     for (int idx = 0; idx < argc; ++idx)
-    {
-        if (std::strcmp(argv[idx], "add") == 0)
         {
-            for (size_t i = 1; i < n; ++i)
-                v[i-1] += v[i];
-        }
-        else if (std::strcmp(argv[idx], "scale") == 0)
-        {
-            ++idx;
-            auto s = (value) std::atoll(argv[idx]);
-            for (auto& vv : v)
-                vv *= s;
-        }
-        else if (std::strcmp(argv[idx], "offset") == 0)
-        {
-            ++idx;
-            auto s = (value) std::atoll(argv[idx]);
-            for (auto& vv : v)
-                vv += s;
-        }
+            if (std::strcmp(argv[idx], "add") == 0)
+                {
+                    for (size_t i = 1; i < n; ++i)
+                        v[i-1] += v[i];
+                }
+            else if (std::strcmp(argv[idx], "scale") == 0)
+                {
+                    ++idx;
+                    auto s = (value) std::atoll(argv[idx]);
+                    for (auto& vv : v)
+                        vv *= s;
+                }
+            else if (std::strcmp(argv[idx], "offset") == 0)
+                {
+                    ++idx;
+                    auto s = (value) std::atoll(argv[idx]);
+                    for (auto& vv : v)
+                        vv += s;
+                }
 
-    }
+        }
     value sum = 0;
     for (size_t i = 1; i < n; i += 2)
         sum += v[i-1]*v[i];
