@@ -1,0 +1,31 @@
+# Code Review pour le groupe 27, composé de Théophane GROS et Thomas LEBLOND
+
+AUTHORS : Nassim TABCHICHE, Lotfi HADBI
+
+1. Repository
+
+- Pensez à ne pas stage les fichiers générés et les configurations de vos IDE.
+  i.e. .vscode/*, build/* CMakeFiles/* etc.
+  Remédiation : les spécifier dans votre .gitignore.
+
+2. is_prime_prog
+
+- Fichiers générés présents
+- Fichiers sources vides (sources.h, IsPrime.cpp)
+- Variable globale `number` initialisée à 0 mais jamais utilisée (main.cpp l.6)
+
+3. find_motive
+
+- Fichiers générés présents
+- find_motive.hpp : Ne pas oublier `#pragma once` ou autre include guard afin
+  d'éviter le risque d'imports multiples.
+- find_motive.hpp : Les imports fstream et iostream sont inutiles ici, seul
+  string est utilisé.
+- main.cpp : Pourquoi ne pas initialiser `occurence` directement à
+  find_motive(argv[1], argv[2]) ? ligne 6
+- Faites attention aux valeurs de retour, en cas d'exécution normale, le
+  programme doit retourner 0, sinon 1.
+
+PS : On n'a parlé que du négatif ci-dessus mais gardez en tête qu'en dehors de
+ça tout est ok. Le code compile, la logique est correcte, il faut juste faire un
+peu de ménage dans le repo et dans le code pour que ce soit parfait.
