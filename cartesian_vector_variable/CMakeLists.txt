@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 
-# set the project name
-project(main)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+project(cartesian_vector_variable)
 
-
-# add the executable
-add_executable(main vector.cpp main.cc )
+add_executable(main main.cc vector.cc)

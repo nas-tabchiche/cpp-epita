@@ -19,6 +19,9 @@ public:
 // Add suitable constructors
     Vector(size_t N);
     Vector(std::initializer_list<value> l);
+    Vector(Vector&& other);
+    Vector& operator=(Vector&& other);
+
 
     size_t size() const;
 
@@ -27,6 +30,7 @@ public:
     // More to go
     Vector& operator-=(const Vector& rhs);
     Vector& operator+=(value v);
+    // Vector& operator-=(value v);
     Vector& operator*=(value v);
 
     Vector operator+(const Vector& rhs) const;
@@ -37,10 +41,13 @@ public:
     value& operator[](size_t idx);
     value operator[](size_t idx) const;
 
+    
+
 private:
 // Private Member functions here (if necessary)
-    size_t vector_size;
-    std::unique_ptr<value[]>data;
+    std::unique_ptr<value[]> content_;
+    size_t size_;
+
 // Member variables are ALWAYS private, and they go here
 };
 
